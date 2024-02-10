@@ -5,7 +5,7 @@
 # 3. return video
 # 4. con
 # """
-from store import Store
+from classes.store import Store
 
 class Customer(Store):
     total_customers = 0
@@ -40,7 +40,8 @@ class Customer(Store):
 
     @classmethod#<--class method
     def get_customer_by_id(cls):
-        Store.load_data("customers")
+        pass
+        # Store.load_data("customers")
 
     def get_customer_rented_videos(self):#<--instance method
         pass
@@ -50,5 +51,5 @@ class Customer(Store):
         pass
 
     
-Customer.load_data()
+# Customer.load_data()
     

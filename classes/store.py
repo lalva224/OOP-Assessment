@@ -15,9 +15,9 @@ class Store:
         pass
 
 
-    def load_data(file):#<--instance method, input file name, ie inventory or customer, no return, just loading data from csv
+    def load_data(self, file):#<--instance method, input file name, ie inventory or customer, no return, just loading data from csv
         # video_list = []
-        with open(f'../data{file}.csv', newline='') as csvfile:
+        with open(f"./data/{file}.csv", newline="") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 print(row)
@@ -28,4 +28,4 @@ class Store:
     def run_the_store():#<-- instance method, no input, example return "Thank you, please come again!"
         pass
 
-Store.load_data()
+# Store.load_data()
