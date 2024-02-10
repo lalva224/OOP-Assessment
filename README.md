@@ -29,7 +29,7 @@ _Back in the day_, humans would actually leave their homes to go rent a physical
 
 Your Video Inventory Management application should manage the following data:
 
-- Load cutomer and video inventory data from the csv files provided
+- Load cutomer and video inventory data from the csv files provided ✔️
 - Manage customer information:
   - customer id
   - customer account type (sx/px/sf/pf)

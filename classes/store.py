@@ -6,6 +6,7 @@
 # """
 
 import csv
+# from .video import Video
 
 class Store:
     def __init__(self, name):#<--instance attributes
@@ -16,16 +17,21 @@ class Store:
 
 
     def load_data(self, file):#<--instance method, input file name, ie inventory or customer, no return, just loading data from csv
-        # video_list = []
+        video_list = {}
         with open(f"./data/{file}.csv", newline="") as csvfile:
             reader = csv.DictReader(csvfile)
+            # line_count = 0
             for row in reader:
-                print(row)
+            #     # line_count += 1
+            #     k, v = row
+            #     video_list[k] = v
+                # print(row)
+                video_list.update(row)
+            #     # print({row[0]: row[1]}")
                 # print(', '.join(row))
-        # return video_list
+        # return row
+        return video_list
 
 
-    def run_the_store():#<-- instance method, no input, example return "Thank you, please come again!"
+    def run_the_store(self):#<-- instance method, no input, example return "Thank you, please come again!"
         pass
-
-# Store.load_data()

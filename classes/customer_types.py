@@ -8,7 +8,8 @@
 # 6. make sure to limit a customer based on their account type
 # """
 
-from classes.customer import Customer
+from .customer import Customer
+from .store import Store
 
 class Customer_pf(Customer):#<--overrides rent_a_video method to meet account conditions | "pf" = premium family account: max 3 rentals out at a time AND can not rent any "R" rated movies
     pass

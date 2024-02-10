@@ -5,7 +5,9 @@
 # 3. return video
 # 4. con
 # """
-from classes.store import Store
+
+from .store import Store
+from .video import Video
 
 class Customer(Store):
     total_customers = 0
@@ -20,11 +22,17 @@ class Customer(Store):
         self._id = Customer.total_customers
         Customer.total_customers += 1
 
-        Customer.all_customers.append(self)
+        # Customer.customers.update(Store.load_data("customers"))
+        # Customer.customers.update(Store.load_data(Store.row))
+        # print(Customer.customers)
+
+        # Customer.all_customers.append(self)
 
     @property#<--getter
     def get_id(self, _id):
-        pass
+        # student_data = Person.all_people("students")
+        customers = Store.video_list("customers")
+        print(customers)
 
     @property
     def get_current_video_rentals(self, _current_video_rentals):#<--see whatever videos are checked out to that customer by id, possibly list or str from list
@@ -52,4 +60,5 @@ class Customer(Store):
 
     
 # Customer.load_data()
+    
     
