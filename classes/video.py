@@ -1,13 +1,14 @@
 # Write your video Class here
 # """TO DO
 # """
-from .store import Store
+from store import Store
+# from classes.store import Store
 
 class Video:
 
     videos = {}
 
-    def __init__(self, _id, _title, _rating, release_year, _copies_available):
+    def __init__(self, _id=0, _title=None, _rating=None, release_year=0, _copies_available=0):
         self._id = int(_id)
         self._title = _title
         self._rating = _rating
@@ -20,7 +21,7 @@ class Video:
 
     @classmethod#<--class method
     def list_inventory(cls):
-        pass
+        Store.load_data("inventory")
 
     @property#<--getter, n/a input
     def get_id():
@@ -45,3 +46,8 @@ class Video:
     @property#<--integer for input, possibly from store inventory by id
     def set_return_a_video(int):#<--parent: _copies_available
         pass
+
+# videos_instance = Video()
+# Video.list_inventory()
+store_instance = Store("Blockbuster")
+store_instance.load_data("inventory")
