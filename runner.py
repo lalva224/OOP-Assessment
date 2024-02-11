@@ -46,3 +46,4 @@ from classes.customer import Customer
 # customer1 = Customer(7, "Becky", "Boop", "sx", [])
 # print(customer1)
 # customer1.get_customer_by_id()
+# Customer.get_customer_rented_videos(2)

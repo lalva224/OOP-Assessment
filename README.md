@@ -31,7 +31,7 @@ Your Video Inventory Management application should manage the following data:
 
 - Load cutomer and video inventory data from the csv files provided ✔️
 - Manage customer information:
-  - customer id
+  - customer id✔️
   - customer account type (sx/px/sf/pf)
     - "sx" = standard account: max 1 rental out at a time
     - "px" = premium account: max 3 rentals out at a time
