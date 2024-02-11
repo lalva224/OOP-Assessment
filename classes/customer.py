@@ -14,10 +14,12 @@ from classes.video import Video
 class Customer(Store):
     total_customers = 0
     customers = {d["id"]: d for d in Store.load_data("customers")}#<--class variable/attribute
+    # customers = {int(d["id"]): d for d in Store.load_data("customers")}#making the key int
+    print(customers)
 
-    def __init__(self, _id=None, first_name=None, last_name=None, _account_type=None, _current_video_rentals=[]):#<--instance attributes
+    def __init__(self, _id, first_name=None, last_name=None, _account_type=None, _current_video_rentals=[]):#<--instance attributes
         # super().__init__(self, id=None)
-        self._id = int(_id)
+        self._id = _id
         self.first_name = first_name
         self.last_name = last_name
         self._account_type = _account_type
@@ -30,9 +32,9 @@ class Customer(Store):
 
     @classmethod#<--getter
     def get_id(cls, _id):
-        if cls._id in Customer.customers:
+        if Customer._id in Customer.customers:
             # print(f"Found: {Customer.customers[id]}")
-            pass
+            print(Customer._id)
         # customers = list(Store.load_data("customers"))
         # print(customers)
         # for i in customers:
@@ -64,9 +66,8 @@ class Customer(Store):
 
     @classmethod#<--class method
     def get_customer_by_id(cls):
-        # list[Store.load_data("customers")]
-        # list(Customer.customers.keys())
-        pass
+        if "id" in Customer.customers:
+            return Customer.customers["id"]
 
     def get_customer_rented_videos(self):#<--instance method
         pass

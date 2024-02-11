@@ -1,6 +1,7 @@
 # ENSURE EVERYTHING BELOW IS COMMENTED WHEN YOU SUBMIT YOUR ASSESSMENT AND RUN TESTS
 from classes.store import Store
 from classes.customer_types import Customer_pf, Customer_sf, Customer_sx
+from classes.customer import Customer
 
 # # """TO DO
 # # 1. exit terminal
@@ -42,3 +43,6 @@ from classes.customer_types import Customer_pf, Customer_sf, Customer_sx
 # block_buster.load_data("inventory")
 # block_buster.load_data("customers")
 # print(block_buster.run_the_store())
+# customer1 = Customer(7, "Becky", "Boop", "sx", [])
+# print(customer1)
+# customer1.get_customer_by_id()
