@@ -17,7 +17,7 @@ class Customer(Store):
 
     def __init__(self, _id=None, first_name=None, last_name=None, _account_type=None, _current_video_rentals=[]):#<--instance attributes
         # super().__init__(self, id=None)
-        self._id = _id
+        self._id = int(_id)
         self.first_name = first_name
         self.last_name = last_name
         self._account_type = _account_type
