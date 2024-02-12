@@ -1,7 +1,7 @@
 # # ENSURE EVERYTHING BELOW IS COMMENTED WHEN YOU SUBMIT YOUR ASSESSMENT AND RUN TESTS
-# from classes.store import Store
+from classes.store import Store
 # from classes.customer_types import Customer_pf, Customer_sf, Customer_sx
-# from classes.customer import Customer
+from classes.customer import Customer
 # from classes.video import Video
 
 # # # """TO DO
@@ -51,13 +51,16 @@
 
 # run_terminal()
 
-
+# 
 # block_buster = Store("Block Buster")
+# Customer.change_id_to_int()
 # block_buster.load_data("inventory")
 # block_buster.load_data("customers")
 # # print(block_buster.run_the_store())
 # Customer.get_customer_by_id("5")
 
+# abe = Customer("Abe", "Lincoln", "sx")
+# print(abe)
 
 
 

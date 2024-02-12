@@ -25,10 +25,23 @@ class Store:
                 data = []
                 for row in reader:
                     data.append(row)
+                return data 
+            
+
+                # for k,v in row.items():
+                #     if k == "id":
+                #         int_id = int(v)
+                #         print(int_id)
+                # print(new_data)
+                    
+
+
+                        # print(k)    
+                    # data.append(row)
                     # print(" ".join(str(row)))
                     # print(row)
             # print(data)
-            return data
+            # return data
 
 
     def run_the_store(self):#<-- instance method, no input, example return "Thank you, please come again!"

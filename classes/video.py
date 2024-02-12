@@ -6,7 +6,7 @@ from classes.store import Store
 
 class Video(Store):
 
-    videos = {d["id"]: d for d in Store.load_data("inventory")}
+    videos = {int(d["id"]): d for d in Store.load_data("inventory")}
 
     def __init__(self, _id=0, _title=None, _rating=None, release_year=0, _copies_available=0):
         self._id = _id
