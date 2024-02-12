@@ -6,7 +6,7 @@
 # """
 
 import csv
-# from customer import Customer
+# from classes.customer import Customer
 # from .video import Video
 
 class Store:
@@ -25,12 +25,14 @@ class Store:
                 data = []
                 for row in reader:
                     data.append(row)
+                    # print(" ".join(str(row)))
+                    # print(row)
             # print(data)
             return data
 
 
     def run_the_store(self):#<-- instance method, no input, example return "Thank you, please come again!"
-        print("Thank you, please come again!")
+        return f"Thank you, please come again!"
 
 
 # store_instance = Store("Blockbuster")
