@@ -4,49 +4,51 @@
 # 2. ability to be able to see the customer database and the types of accounts each customer has
 # 3. ability to run store in terminal program
 # """
-
 import csv
-# from classes.customer import Customer
-# from .video import Video
-
+from classes.customer import Customer
+from classes.customer_types import Customer_pf
+from classes.customer_types import Customer_px
+from classes.customer_types import Customer_sf
+from classes.customer_types import Customer_sx
+from classes.video import Video
 class Store:
-    def __init__(self, name):#<--instance attributes
+    def __init__(self,name):
         self.name = name
-
-    def customer_type_maker(self):#<--instance method, input from customer class so you can see the customer list and be able to change the type of account each customer has
-        pass
-
-    @classmethod
-    def load_data(cls, file):#<--instance method, input file name, ie inventory or customer, no return, just loading data from csv
-        # video_list = {}
-        # if file == "customers":
-            with open(f"./data/{file}.csv", newline="") as csvfile:
-                reader = csv.DictReader(csvfile)
-                data = []
-                for row in reader:
-                    data.append(row)
-                return data 
-            
-
-                # for k,v in row.items():
-                #     if k == "id":
-                #         int_id = int(v)
-                #         print(int_id)
-                # print(new_data)
-                    
+        self.customers = []
+        self.videos = []
+    
+    def match_customer(self,customer_dict):
+        match customer_dict["account_type"]:
+            case "sx":
+                customer = Customer_sx(customer_dict["id"],customer_dict["account_type"],customer_dict["first_name"],customer_dict["last_name"],customer_dict["current_video_rentals"])
+            case "sf":
+                customer = Customer_sf(customer_dict["id"],customer_dict["account_type"],customer_dict["first_name"],customer_dict["last_name"],customer_dict["current_video_rentals"])
+            case "px":
+                customer = Customer_px(customer_dict["id"],customer_dict["account_type"],customer_dict["first_name"],customer_dict["last_name"],customer_dict["current_video_rentals"])
+            case "pf":
+                customer = Customer_pf(customer_dict["id"],customer_dict["account_type"],customer_dict["first_name"],customer_dict["last_name"],customer_dict["current_video_rentals"])
+        
+        return customer
 
 
-                        # print(k)    
-                    # data.append(row)
-                    # print(" ".join(str(row)))
-                    # print(row)
-            # print(data)
-            # return data
+    def store_customer_data(self):
+        with open("./data/customers.csv","r") as file:
+            customer_reader = csv.DictReader(file)
+            for customer_dict in customer_reader:
+                customer = self.match_customer(customer_dict)
+                self.customers.append(customer)
+        
+        return "Customer data stored!"
+    
+    def store_video_data(self):
+        with open("./data/inventory.csv","r") as file:
+            video_reader = csv.DictReader(file)
+            for video_dict in video_reader:
+                video = Video(**video_dict)
+                self.videos.append(video)
+        
+        return "Video data stored!"
 
-
-    def run_the_store(self):#<-- instance method, no input, example return "Thank you, please come again!"
-        return f"Thank you, please come again!"
-
-
-# store_instance = Store("Blockbuster")
-# store_instance.load_data("customers")
+store = Store("Blockbuster")
+store.store_video_data()
+print(store.videos)
